@@ -88,6 +88,7 @@ app.post("/tap", async (req: Request, res: Response) => {
   // Realtime (if receiver is connected via WS)
   const ws = sockets[to];
   if (ws && ws.readyState === WebSocket.OPEN) {
+    console.log(event);
     ws.send(JSON.stringify(event));
   }
 
